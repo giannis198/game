@@ -1,0 +1,33 @@
+word = 'giraffe'
+word1 = ''.join(sorted(word))
+word3 = list(word1)
+x = len(word)
+print(f'welcome!please enter {x} letters from a-z to find the word')
+
+count = 0
+def game():
+    count = 0
+    letters = 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'
+    while True:
+        guess = []
+        for i in range(0,x):
+            letter =input('choose letter :').lower()
+            if letter not in letters:
+                print('only letter for a-z')
+                game()
+            else:
+                guess.append(letter)
+                guess2 = sorted(guess)
+                print(guess)
+
+
+
+        if guess2 == word3:
+            return print('Bravo you tried ' + str(count) + ' times')
+        else:
+            count += 1
+            print('Wrong please try again')
+
+
+
+game()
